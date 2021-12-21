@@ -42,8 +42,7 @@ public class Demo {
 			System.out.println(cl.getTime());
 
 		} catch (IllegalArgumentException e) {
-			System.out.println("いやいやないないその日付");
-			//			e.printStackTrace();
+			System.out.println("いやいやないなよ！その日付！");
 		}
 
 	}
