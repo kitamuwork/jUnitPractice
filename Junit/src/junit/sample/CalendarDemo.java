@@ -1,8 +1,9 @@
 package junit.sample;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Demo {
+public class CalendarDemo {
 
 	public static void main(String[] args) {
 		//Calendarクラスのオブジェクトを生成する
@@ -15,21 +16,22 @@ public class Demo {
 		System.out.println("getTime: " + cl.getTime());
 		System.out.println("toString: " + cl.getTime().toString());
 
-		//		System.out.println("Calendar.YEAR: " + Calendar.YEAR);
-		//		System.out.println("Calendar.MONTH: " + Calendar.MONTH);
-		//		System.out.println("Calendar.DATE: " + Calendar.DATE);
+		// SimpleDateFormatクラスを使用して、パターンを設定する
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+		System.out.print("SimpleDateFormatした日付は ");
+		System.out.println(sdf.format(cl.getTime()));
 
 		// 年に2022年を設定する_
 		cl.set(Calendar.YEAR, 2022);
-		System.out.println("年に2022年を設定：" + cl.getTime());
+		System.out.println("年に2022年を設定：" + sdf.format(cl.getTime()));
 
 		// 月に10月を設定する *月の指定は0から始まるため、10月は'9"を指定する
 		cl.set(Calendar.MONTH, 9);
-		System.out.println("月に10月を設定：" + cl.getTime());
+		System.out.println("月に10月を設定：" + sdf.format(cl.getTime()));
 
 		// 日に5日を設定する
 		cl.set(Calendar.DATE, 5);
-		System.out.println("日に5日を設定：" + cl.getTime());
+		System.out.println("日に5日を設定：" + sdf.format(cl.getTime()));
 
 		//日付の妥当性確認
 		//setLenientメソッドでfalseを設定
